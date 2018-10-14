@@ -27,7 +27,7 @@ dependencies {
   testCompile 'org.junit.jupiter:junit-jupiter-api:5.3.1'
   testCompile 'org.junit.jupiter:junit-jupiter-params:5.3.1'
   testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
-  testCompile 'com.codeborne:selenide:5.0.0'
+  testCompile 'com.codeborne:selenide:4.14.2'
   testCompile('org.seleniumhq.selenium:selenium-safari-driver:3.14.0') { transitive = false }
   testCompile('org.seleniumhq.selenium:htmlunit-driver:2.33.0')
   testCompile('com.codeborne:phantomjsdriver:1.4.4') { transitive = false }
