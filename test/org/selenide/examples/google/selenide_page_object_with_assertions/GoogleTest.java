@@ -1,6 +1,6 @@
 package org.selenide.examples.google.selenide_page_object_with_assertions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;

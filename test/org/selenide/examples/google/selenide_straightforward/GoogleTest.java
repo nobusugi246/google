@@ -1,6 +1,6 @@
 package org.selenide.examples.google.selenide_straightforward;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;

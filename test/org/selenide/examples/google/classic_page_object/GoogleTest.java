@@ -1,9 +1,9 @@
 package org.selenide.examples.google.classic_page_object;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -14,13 +14,12 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.hamcrest.CoreMatchers.startsWith;
-import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GoogleTest {
   WebDriver driver;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     String currentBrowser = System.getProperty("selenide.browser", "firefox");
     if ("chrome".equals(currentBrowser)) {
@@ -45,7 +44,7 @@ public class GoogleTest {
     }
   }
 
-  @After
+  @AfterEach
   public void tearDown() {
     if (driver != null) {
       driver.quit();
@@ -57,6 +56,6 @@ public class GoogleTest {
     driver.get("https://www.google.com/ncr");
     GooglePage page = PageFactory.initElements(driver, GooglePage.class);
     SearchResultsPage results = page.searchFor("Selenide");
-    assertThat(results.getResults().get(0).getText(), startsWith("Selenide: concise UI tests in Java"));
+    assertTrue(results.getResults().get(0).getText().startsWith("Selenide: concise UI tests in Java"));
   }
 }
